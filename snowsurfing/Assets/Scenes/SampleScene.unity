@@ -1524,6 +1524,7 @@ GameObject:
   - component: {fileID: 2130911933}
   - component: {fileID: 2130911930}
   - component: {fileID: 2130911934}
+  - component: {fileID: 2130911935}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1545,7 +1546,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDamping: 0
-  m_AngularDamping: 0.05
+  m_AngularDamping: 15
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -1556,7 +1557,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!4 &2130911933
 Transform:
@@ -1611,6 +1612,19 @@ CapsuleCollider2D:
   m_Offset: {x: 0.75405663, y: -0.4063789}
   m_Size: {x: 1.8940401, y: 0.36785713}
   m_Direction: 1
+--- !u!114 &2130911935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2130911929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e98a223c0ed9b44fb4abd42d9b3d251, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NewMonoBehaviourScript
+  torqueAmount: 10
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
