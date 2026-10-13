@@ -10,16 +10,17 @@ public class NewMonoBehaviourScript : MonoBehaviour
     Rigidbody2D myRigidbody2D;
     Vector2 moveVector;
     SurfaceEffector2D surfaceEffector2D;
+    ScoreManager scoreManager;
     bool canControlPlayer = true;
     float previousRotation;
     float totalRotation;
-    int flipCount;
 
     void Start()
     {
         moveAction = InputSystem.actions.FindAction("Move");
         myRigidbody2D = GetComponent<Rigidbody2D>();
         surfaceEffector2D = FindAnyObjectByType<SurfaceEffector2D>();
+        scoreManager = FindAnyObjectByType<ScoreManager>();
     }
 
     void Update()
@@ -69,11 +70,11 @@ public class NewMonoBehaviourScript : MonoBehaviour
 
         if (totalRotation > 340 || totalRotation < -340)
         {
-            flipCount += 1;
             totalRotation = 0;
+            scoreManager.AddScore(100);
         }
 
-        previousRotation = currentRotation
+        previousRotation = currentRotation;
     }
     
     public void DisableControls()
