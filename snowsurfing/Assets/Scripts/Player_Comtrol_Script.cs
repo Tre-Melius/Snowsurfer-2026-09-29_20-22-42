@@ -11,6 +11,9 @@ public class NewMonoBehaviourScript : MonoBehaviour
     Vector2 moveVector;
     SurfaceEffector2D surfaceEffector2D;
     bool canControlPlayer = true;
+    float previousRotation;
+    float totalRotation;
+    int flipCount;
 
     void Start()
     {
@@ -27,6 +30,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
         {
             RotatePlayer();
             BoostPlayer();
+            CalculateFlips();
         }
         
 
@@ -55,6 +59,21 @@ public class NewMonoBehaviourScript : MonoBehaviour
         {
             surfaceEffector2D.speed = baseSpeed;
         }
+    }
+
+    void CalculateFlips()
+    {
+        float currentRotation = transform.rotation.eulerAngles.z;
+
+        totalRotation += Mathf.DeltaAngle(previousRotation, currentRotation);
+
+        if (totalRotation > 340 || totalRotation < -340)
+        {
+            flipCount += 1;
+            totalRotation = 0;
+        }
+
+        previousRotation = currentRotation
     }
     
     public void DisableControls()
