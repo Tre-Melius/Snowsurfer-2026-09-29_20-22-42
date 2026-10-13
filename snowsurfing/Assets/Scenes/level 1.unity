@@ -18165,6 +18165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89f050cbe0d5ab04e846f8fd35dd879a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SnowTrail
+  snowParticles: {fileID: 2087093249}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

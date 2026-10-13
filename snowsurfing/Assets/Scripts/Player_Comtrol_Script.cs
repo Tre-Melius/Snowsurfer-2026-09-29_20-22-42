@@ -10,6 +10,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
     Rigidbody2D myRigidbody2D;
     Vector2 moveVector;
     SurfaceEffector2D surfaceEffector2D;
+    bool canControlPlayer = true;
 
     void Start()
     {
@@ -22,8 +23,12 @@ public class NewMonoBehaviourScript : MonoBehaviour
     {
         // (x,y)
         // (0.2, 0.5)
-        RotatePlayer();
-        BoostPlayer();
+        if (canControlPlayer)
+        {
+            RotatePlayer();
+            BoostPlayer();
+        }
+        
 
     }
 
@@ -50,5 +55,10 @@ public class NewMonoBehaviourScript : MonoBehaviour
         {
             surfaceEffector2D.speed = baseSpeed;
         }
+    }
+    
+    public void DisableControls()
+    {
+        canControlPlayer = false;
     }
 }
