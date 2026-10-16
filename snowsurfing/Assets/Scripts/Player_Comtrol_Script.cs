@@ -7,11 +7,11 @@ public class NewMonoBehaviourScript : MonoBehaviour
     [SerializeField] float baseSpeed = 15f;
     [SerializeField] float boostSpeed =20f;
     [SerializeField] ParticleSystem powerupParticles;
+    [SerializeField] ScoreManager scoreManager;
     InputAction moveAction;
     Rigidbody2D myRigidbody2D;
     Vector2 moveVector;
     SurfaceEffector2D surfaceEffector2D;
-    ScoreManager scoreManager;
     bool canControlPlayer = true;
     float previousRotation;
     float totalRotation;
@@ -22,7 +22,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
         moveAction = InputSystem.actions.FindAction("Move");
         myRigidbody2D = GetComponent<Rigidbody2D>();
         surfaceEffector2D = FindAnyObjectByType<SurfaceEffector2D>();
-        scoreManager = FindAnyObjectByType<ScoreManager>();
+        
     }
 
     void Update()
